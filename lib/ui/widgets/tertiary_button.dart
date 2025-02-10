@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:guia_de_moteis/ui/widgets/custom_typography.dart';
 
 class TertiaryButton extends StatelessWidget {
   final void Function()? onPressed;
@@ -12,13 +13,11 @@ class TertiaryButton extends StatelessWidget {
       onTap: onPressed,
       child: Row(
         children: [
-          Text(
-            text,
-            style: const TextStyle(
-              fontSize: 12,
-              color: Colors.grey,
-              fontWeight: FontWeight.bold,
-            ),
+          CustomTypography(
+            text: text,
+            variant: TypographyVariant.h5,
+            color: Colors.grey,
+            weight: FontWeight.bold,
           ),
           const Icon(
             Icons.keyboard_arrow_down,
