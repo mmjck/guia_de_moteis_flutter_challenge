@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:guia_de_moteis/theme/colors.dart';
+import 'package:guia_de_moteis/ui/widgets/custom_typography.dart';
 
 class HeaderAppBar extends StatelessWidget {
   const HeaderAppBar({super.key});
@@ -9,7 +11,7 @@ class HeaderAppBar extends StatelessWidget {
       flexibleSpace: Container(
         padding: const EdgeInsets.only(top: 40, left: 16, right: 16),
         decoration: const BoxDecoration(
-          color: Color(0xFFD0011B),
+          color: ThemeColors.header,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -32,12 +34,11 @@ class HeaderAppBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "são paulo",
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
+                  CustomTypography(
+                    text: "são paulo",
+                    variant: TypographyVariant.h2,
+                    color: Colors.white,
+                    weight: FontWeight.bold,
                   ),
                   Icon(Icons.keyboard_arrow_down, color: Colors.white),
                 ],
