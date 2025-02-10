@@ -3,10 +3,9 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:guia_de_moteis/core/models/motel.dart';
 import 'package:guia_de_moteis/core/models/suite.dart';
 import 'package:guia_de_moteis/ui/widgets/motel_card.dart';
-import 'package:guia_de_moteis/ui/widgets/tertiary_button.dart';
 
 void main() {
-  group("MotelCard test", () {
+  group("MotelCard", () {
     final data = Motel(
         fantasia: "test",
         logo:
