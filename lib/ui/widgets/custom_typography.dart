@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-enum TypographyVariant { h1, h2, h3, h4 }
-
 class CustomTypography extends StatelessWidget {
   final String text;
   final TypographyVariant variant;
@@ -59,7 +57,7 @@ class CustomTypography extends StatelessWidget {
           color: color,
           decoration: decoration,
         );
-      default:
+      case TypographyVariant.h5:
         return TextStyle(
           fontSize: 12,
           fontWeight: weight,
@@ -69,3 +67,5 @@ class CustomTypography extends StatelessWidget {
     }
   }
 }
+
+enum TypographyVariant { h1, h2, h3, h4, h5 }
