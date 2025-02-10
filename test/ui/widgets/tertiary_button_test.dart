@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:guia_de_moteis/ui/widgets/custom_typography.dart';
 import 'package:guia_de_moteis/ui/widgets/tertiary_button.dart';
 
 void main() {
@@ -18,7 +19,21 @@ void main() {
 
       expect(find.byType(TertiaryButton), findsOneWidget);
     });
+    testWidgets('render widgets', (WidgetTester tester) async {
+      final widget = TertiaryButton(
+        text: "test",
+        onPressed: () {},
+      );
 
+      await tester.pumpWidget(MaterialApp(
+        home: Scaffold(
+          body: widget,
+        ),
+      ));
+
+      expect(find.byType(CustomTypography), findsOneWidget);
+      expect(find.byType(Icon), findsOneWidget);
+    });
     testWidgets('render element', (WidgetTester tester) async {
       tester.view.devicePixelRatio = 2.0;
       tester.view.physicalSize = const Size(1080, 1920);
