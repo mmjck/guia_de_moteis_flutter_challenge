@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:guia_de_moteis/core/models/periodo.dart';
 import 'package:guia_de_moteis/ui/widgets/custom_typography.dart';
 import 'package:guia_de_moteis/utils/extract_percentage_value.dart';
-import 'package:guia_de_moteis/utils/format_to_price.dart';
+import 'package:guia_de_moteis/utils/format_to_currency.dart';
 
 class RowPrice extends StatelessWidget {
   final Periodo periodo;
