@@ -33,35 +33,20 @@ class RowPrice extends StatelessWidget {
     );
   }
 
-  Widget _buildWithoutDiscount() {
-    return Row(
-      children: [
-        Container(
-          width: 1,
-          height: 50,
-          color: Colors.black,
-        ),
-        const SizedBox(
-          width: 10,
-        ),
-        Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CustomTypography(
-              text: periodo.tempoFormatado.toString(),
-              color: Colors.grey,
-              variant: TypographyVariant.h2,
-            ),
-            CustomTypography(
-              text: formatCurrency(periodo.valor),
-              color: Colors.grey,
-              variant: TypographyVariant.h2,
-            ),
-          ],
-        ),
-      ],
+  Widget _buildPriceText({required String value, Color? color}) {
+    return CustomTypography(
+      text: value,
+      color: color ?? Colors.grey,
+      variant: TypographyVariant.h2,
+    );
+  }
+
+  Widget _buildPriceTextLineThrough(double value) {
+    return CustomTypography(
+      text: formatCurrency(value),
+      color: Colors.grey,
+      variant: TypographyVariant.h2,
+      decoration: TextDecoration.lineThrough,
     );
   }
 
@@ -69,6 +54,7 @@ class RowPrice extends StatelessWidget {
     final discount =
         extractPercentage(periodo.valor, periodo.desconto!.desconto)
             .toStringAsPrecision(2);
+
     return Row(
       children: [
         Container(
@@ -125,20 +111,35 @@ class RowPrice extends StatelessWidget {
     );
   }
 
-  Widget _buildPriceTextLineThrough(double value) {
-    return CustomTypography(
-      text: formatCurrency(value),
-      color: Colors.grey,
-      variant: TypographyVariant.h2,
-      decoration: TextDecoration.lineThrough,
-    );
-  }
-
-  Widget _buildPriceText({required String value, Color? color}) {
-    return CustomTypography(
-      text: value,
-      color: color ?? Colors.grey,
-      variant: TypographyVariant.h2,
+  Widget _buildWithoutDiscount() {
+    return Row(
+      children: [
+        Container(
+          width: 1,
+          height: 50,
+          color: Colors.black,
+        ),
+        const SizedBox(
+          width: 10,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            CustomTypography(
+              text: periodo.tempoFormatado.toString(),
+              color: Colors.grey,
+              variant: TypographyVariant.h2,
+            ),
+            CustomTypography(
+              text: formatCurrency(periodo.valor),
+              color: Colors.grey,
+              variant: TypographyVariant.h2,
+            ),
+          ],
+        ),
+      ],
     );
   }
 }
