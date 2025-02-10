@@ -1,16 +1,24 @@
-# guia_de_moteis
+# 🚀 Senior Flutter Developer Challenge
 
-A new Flutter project.
+## 🛠️ Tech Stack & Expectations
 
-## Getting Started
+- **Flutter 3.19.1** with **Dart 3.3.0**
+- **State Management** (Provider)
+- **REST API Integration** (Fetch data from [API mock](https://jsonkeeper.com/b/1IXK))
+- **Unit & Widget Testing** (Mockito, flutter_test)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Setup Instructions
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-repo/flutter-challenge.git
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Install dependencies:
+    ```sh
+    flutter pub get
+    ````
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Run the application:
+    ```sh
+    flutter run
